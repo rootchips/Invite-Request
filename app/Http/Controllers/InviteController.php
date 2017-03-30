@@ -9,6 +9,7 @@ class InviteController extends Controller
     public function invite()
     {
     	// user a form with an email field to invite a new user
+    	return view('invite');
     }
 
     public function process()
