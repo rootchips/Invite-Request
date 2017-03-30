@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Invites;
 
 class InviteCreated extends Mailable
 {
@@ -16,9 +17,9 @@ class InviteCreated extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Invites $invite)
     {
-        //
+        $this->invite = $invite;
     }
 
     /**
@@ -28,6 +29,6 @@ class InviteCreated extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('mohamadroslansaidi@gmail.com')->view('emails.invite');
     }
 }
