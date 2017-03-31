@@ -27,7 +27,6 @@ Open [http://localhost:8000/invite](http://localhost:8000/invite) from your brow
 To send user invitation, hit the link 
 [http://localhost:8000/invite](http://localhost:8000/invite) from your browser.
 You must send valid user's email address. 
-- Roslan Saidi - 
 -----
 ## License
 
