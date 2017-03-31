@@ -3,6 +3,6 @@
 
 <form action="{{ route('invite') }}" method="POST">
 	{{ csrf_field() }}
-	<input type="email" name="email">
+	<input type="email" name="email" placeholder="Put a valid email address">
 	<button type="submit">Send Invite</button>
 </form>
