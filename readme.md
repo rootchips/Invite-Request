@@ -12,8 +12,8 @@ Make a migration for Invite Table and you need to write some schema.
 
 ### Step 2 : Invite table schema & Fix user table schema
 Write some column & datatype for Invite table. Project/database/migrations/xx_xx_xx_creates_invite_table.php
-```
-	public function up()
+```php
+public function up()
     {
         Schema::create('invite', function(Blueprint $table) {
             $table->increments('id');
@@ -22,14 +22,14 @@ Write some column & datatype for Invite table. Project/database/migrations/xx_xx
             $table->timestamps();
         });
     }
-	public function down()
+public function down()
 	{
 		Schema::drop('invite');
 	}
 ```
 Delete name and password in user table schema. Project/database/migrations/xx_xx_xx_xx_creates_users_table.php
-```
-    public function up()
+```php
+public function up()
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
@@ -37,7 +37,6 @@ Delete name and password in user table schema. Project/database/migrations/xx_xx
             $table->rememberToken();
             $table->timestamps();
         });
-    }
     }
    ```
 
