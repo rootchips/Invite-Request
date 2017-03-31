@@ -1,44 +1,37 @@
-User Invitation Systems using Mailable - Laravel 5.4.16
-==============
+# Laravel 5 Simple User Invitation using Mailable
+-----
+<a name="item3"></a>
+## Quick Start:
 
-Imagine you build a CMS then you need to send user an invitation to their email for get full access of your account.
+Clone this repository and install the dependencies.
 
-### Step 1 : Migration
-Type this on your Terminal/CLI.
-```
-php artisan make:migration creates_invite_table
-```
-Make a migration for Invite Table and you need to write some schema.
+    $ git clone https://github.com/rootchips/user-invitataion-mailable.git CUSTOM_DIRECTORY && cd CUSTOM_DIRECTORY
+    $ composer install
+    
+Rename the `.env.example` to `.env`, then create a database and mail then edit the `.env` file.
 
-### Step 2 : Invite table schema & Fix user table schema
-Write some column & datatype for Invite table. Project/database/migrations/xx_xx_xx_creates_invite_table.php
-```php
-public function up()
-    {
-        Schema::create('invite', function(Blueprint $table) {
-            $table->increments('id');
-            $table->string('email');
-            $table->string('token', 16)->unique();
-            $table->timestamps();
-        });
-    }
-public function down()
-	{
-		Schema::drop('invite');
-	}
-```
-Delete name and password in user table schema. Project/database/migrations/xx_xx_xx_xx_creates_users_table.php
-```php
-public function up()
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('email')->unique();
-            $table->rememberToken();
-            $table->timestamps();
-        });
-    }
-   ```
+    $ mv .env.example .env
+    $ vi .env
 
+Generate an application key and migrate the tables, then seed.
 
+    $ php artisan key:generate
+    $ php artisan migrate
+    $ php artisan db:seed
+
+Finally, serve the application.
+
+    $ php artisan serve
+
+Open [http://localhost:8000/invite](http://localhost:8000/invite) from your browser. 
+To send user invitation, hit the link 
+[http://localhost:8000/invite](http://localhost:8000/invite) from your browser.
+You must send valid user's email address. 
+- Roslan Saidi - 
+-----
+## License
+
+This is free software distributed under the terms of the MIT license
+
+-----
 
