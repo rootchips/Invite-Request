@@ -1,6 +1,5 @@
 # Laravel 5 Simple User Invitation using Mailable
 -----
-<a name="item3"></a>
 ## Quick Start:
 
 Clone this repository and install the dependencies.
