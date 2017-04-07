@@ -2,12 +2,12 @@
 -----
 ## Quick Start:
 
-Clone this repository and install the dependencies.
+Clone this repository and install the dependencies. Kindly change your CUSTOM_DIRECTORY.
 
     $ git clone https://github.com/rootchips/user-invitataion-mailable.git CUSTOM_DIRECTORY && cd CUSTOM_DIRECTORY
     $ composer install
     
-Rename the `.env.example` to `.env`, then create a database and mail
+Rename the `.env.example` to `.env`, then create a database setting and mail server setting.
 
     $ mv .env.example .env
     $ vi .env
@@ -22,20 +22,24 @@ DB_DATABASE=yourdatabase
 DB_USERNAME=yourid
 DB_PASSWORD=yourpasswd
 ```
+
+Try using mailtrap.io or Google Mail.
+
 ```
 MAIL_DRIVER=smtp
 MAIL_HOST=smtp.youremailprovider.com
-MAIL_PORT=587
+MAIL_PORT=smtpport
 MAIL_USERNAME=yourvalid@emailaddress
 MAIL_PASSWORD=youremailpasswd
-MAIL_ENCRYPTION=tls
+MAIL_ENCRYPTION=tls/ssl
 ```
 
-Generate an application key and migrate the tables, then seed.
+Generate an application key and migrate the tables.
 
     $ php artisan key:generate
     $ php artisan migrate
-    $ php artisan db:seed
+
+You can see the migrated tables in your database.
 
 Finally, serve the application.
 
@@ -51,4 +55,3 @@ You must send valid user's email address.
 This is free software distributed under the terms of the MIT license
 
 -----
-
