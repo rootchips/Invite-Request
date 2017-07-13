@@ -12,7 +12,7 @@ class InviteCreated extends Mailable
 {
     use Queueable, SerializesModels;
     
-    public $invite;
+    private $invite;
     /**
      * Create a new message instance.
      *
