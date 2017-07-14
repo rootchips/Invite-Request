@@ -2,17 +2,17 @@
 
 namespace App\Mail;
 
+use App\Invite;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Invite;
 
 class InviteCreated extends Mailable
 {
     use Queueable, SerializesModels;
-    
+
     private $invite;
+
     /**
      * Create a new message instance.
      *

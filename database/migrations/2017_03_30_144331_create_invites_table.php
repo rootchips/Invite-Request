@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateInvitesTable extends Migration
 {
@@ -13,7 +13,7 @@ class CreateInvitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('invites', function(Blueprint $table) {
+        Schema::create('invites', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email');
             $table->string('token', 16)->unique();
